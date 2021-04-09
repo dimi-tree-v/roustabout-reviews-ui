@@ -1,15 +1,18 @@
-const Button = ( props ) => {
-  console.log(props)
-  const {
-    text,
-    color,
-    active,
-  } = props;
-  return <button style={{ backgroundColor: (active ? color : 'grey') }}
+export const IconButton = ({ icon, color, active }) => {
+    return <Button content={icon} color={color} active={active}/>
+}
+
+export const TextButton = ({ text, color, active }) => {
+    return <Button content={text} color={color} active={active}/>
+}
+
+
+const Button = ({ content, color, active }) => {
+  return <button
+          style={{ backgroundColor: (active ? color : 'grey') }}
           className='btn'>
-            {text}
+            {content}
+
           </button>
 
 }
-
-export default Button

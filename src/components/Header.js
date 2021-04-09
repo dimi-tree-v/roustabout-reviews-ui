@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
-import Button from './Button'
+import { ArrowRight } from 'react-bootstrap-icons';
+import { IconButton, TextButton } from './Button'
 
 
 const Header = ({ title }) => {
   return (
     <header className='header'>
       <h1>{title}</h1>
-      <Button text='Login' color='green' active={true} />
+      <IconButton icon=<ArrowRight/> color='green' active={true} />
     </header>
   )
 }
