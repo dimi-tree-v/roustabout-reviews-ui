@@ -1,16 +1,17 @@
-export const IconButton = ({ icon, color, active }) => {
-    return <Button content={icon} color={color} active={active}/>
+export const IconButton = ({ icon, active }) => {
+    return <Button className="iconButton" content={icon} active={active}/>
 }
 
-export const TextButton = ({ text, color, active }) => {
-    return <Button content={text} color={color} active={active}/>
+export const TextButton = ({ text, active }) => {
+    return <Button className="textButton" content={text} active={active}/>
 }
 
 
-const Button = ({ content, color, active }) => {
+const Button = ({ content, active }) => {
   return <button
-          style={{ backgroundColor: (active ? color : 'grey') }}
-          className='btn'>
+          className='btn'
+          disabled={active}
+          >
             {content}
 
           </button>

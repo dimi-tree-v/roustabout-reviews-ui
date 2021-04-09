@@ -19,25 +19,43 @@ body {
   padding: 1%;
 }
 
-.header {
+h1 {
+  margin: auto;
+  padding-bottom: 1%;
+  /* margin-left: 42% */
+}
+
+.HeaderRow1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.HeaderRow2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  max-width: 30%;
+}
+
 .btn {
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background: none;
+  color: black;
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
 }
+/*
+.btn .svg {
+  height: 120px;
+} */
 
 .btn:focus {
   outline: none;
@@ -45,6 +63,7 @@ body {
 
 .btn:active {
   transform: scale(0.98);
+  color: grey;
 }
 
 .btn-block {
