@@ -1,19 +1,30 @@
-export const IconButton = ({ icon, active }) => {
-    return <Button className="iconButton" content={icon} active={active}/>
-}
+import { Link } from 'react-router-dom';
 
-export const TextButton = ({ text, active }) => {
-    return <Button className="textButton" content={text} active={active}/>
-}
+export const IconLink = ({ icon, path, active }) => {
+  return (
+    <Link to={path}>
+      <Button className="iconLink" content={icon} active={active}/>
+    </Link>
+  )
+};
+
+export const TextLink = ({ text, path, active }) => {
+    return (
+      <Link to={path}>
+        <Button className="textLink" content={text} active={active}/>
+      </Link>
+    )
+};
 
 
-const Button = ({ content, active }) => {
-  return <button
-          className='btn'
-          disabled={active}
-          >
-            {content}
+const Button = ({ content, active,  }) => {
+  return (
+      <button
+        className='btn'
+        disabled={active}
+        >
+          {content}
+      </button>
+  )
 
-          </button>
-
-}
+};

@@ -1,26 +1,26 @@
 import PropTypes from 'prop-types';
 import { Person } from 'react-bootstrap-icons';
-import { IconButton, TextButton } from './Button';
+import { IconLink, TextLink } from './Button';
 
 
 const Nav = ({ title }) => {
   return (
     <nav>
-      <div className='NavRow1'>
-        <h1>{title}</h1>
-        <IconButton icon=<Person/> active={true} />
+      <div className="nav-row-1">
+        <h1 className="title-header"><TextLink text={title} path='/' /></h1>
+        <IconLink icon=<Person/> path='/users'/>
       </div>
-      <div className='NavRow2'>
-        <TextButton text='Reviews' />
-        <TextButton text='New Music' />
-        <TextButton text='Lists' />
+      <div className="nav-row-2">
+        <TextLink text="Reviews" path="/reviews" />
+        <TextLink text="New Releases" path="/new-releases"/>
+        <TextLink text="Lists" path="/lists"/>
       </div>
     </nav>
   )
 }
 
 Nav.defaultProps = {
-  title: 'Roustabout Reviews',
+  title: "Roustabout Reviews",
 }
 
 Nav.propTypes = {
