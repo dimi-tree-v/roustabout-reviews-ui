@@ -10,7 +10,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.container {
+nav {
   max-width: 100%;
   margin: auto;
   overflow: auto;
@@ -19,19 +19,30 @@ body {
   padding: 1%;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   margin: auto;
   padding-bottom: 1%;
-  /* margin-left: 42% */
+  padding-left: 3%;
 }
 
-.HeaderRow1 {
+.title-header a .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 150%;
+}
+
+.nav-row-1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.HeaderRow2 {
+.nav-row-2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,16 +57,11 @@ h1 {
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  /* border-radius: 5px; */
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
 }
-/*
-.btn .svg {
-  height: 120px;
-} */
 
 .btn:focus {
   outline: none;
