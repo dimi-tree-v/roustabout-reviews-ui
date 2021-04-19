@@ -4,6 +4,7 @@ import Lists from './components/Lists';
 import NewReleases from './components/NewReleases';
 import Reviews from './components/Reviews';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/lists" component={Lists} />
           <Route path="/new-releases" component={NewReleases} />
           <Route path="/reviews" component={Reviews} />
+          <Route path="/login" component={Login} />
         </Switch>
       </div>
     </Router>

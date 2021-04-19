@@ -8,7 +8,7 @@ const Nav = ({ title }) => {
     <nav>
       <div className="nav-row-1">
         <h1 className="title-header"><TextLink text={title} path='/' /></h1>
-        <IconLink icon=<Person/> path='/users'/>
+        <IconLink icon={<Person/>} path='/login'/>
       </div>
       <div className="nav-row-2">
         <TextLink text="Reviews" path="/reviews" />
