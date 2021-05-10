@@ -7,6 +7,7 @@ export const userService = {
 }
 
 function login(username, password) {
+    console.log('login service');
     let body = { username, password }
     apiRequest('POST', body)
         .then(user => {
