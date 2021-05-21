@@ -9,9 +9,10 @@ export const userService = {
 function login(username, password) {
     console.log('login service');
     let body = { username, password }
-    apiRequest('POST', body)
+    apiRequest('POST', apiUrls.login, body)
         .then(user => {
             localStorage.setItem('user', JSON.stringify(user));
+            console.log(user);
             return user;
         });
 }
@@ -21,17 +22,19 @@ function logout() {
 }
 
 
-function apiRequest(method, data={}) {
+export function apiPost(method, url, data={}) {
     const requestOptions = {
         method: method,
-        headers: authHeader() + { 'Content-type': 'application/json' },
+        headers: authHeader(),
         body: JSON.stringify(data)
     };
-    return fetch(apiUrls.login, requestOptions)
-        .then(handleResponse)
+    console.log(requestOptions);
+    return fetch(url, requestOptions)
+            .then(handleResponse);
 }
 
 function handleResponse(response) {
+    console.log(response)
     return response.text().then(text => {
         const data = text && JSON.parse(text);
         if (!response.ok) {
@@ -42,6 +45,8 @@ function handleResponse(response) {
             const error = ( data && data.message) || response.statusText;
             return Promise.reject(error);
         }
+        console.log(data);
         return data;
     });
 }
+

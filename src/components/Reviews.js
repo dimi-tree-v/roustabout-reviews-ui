@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { apiRequest } from '../services/userServices';
 
 const Reviews = () => {
 
@@ -7,9 +8,7 @@ const Reviews = () => {
   },[]);
 
   const fetchItems = async () => {
-    const data = await fetch('http://localhost:8000/api/v1/articles/');
-    console.log(data);
-    console.log('yo');
+    const data = await apiRequest('GET', 'http://localhost:8000/api/v1/articles/');
   }
 
   return (
