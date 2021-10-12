@@ -80,20 +80,27 @@ h1 {
 .reviews {
   flex-wrap: wrap;
   display: flex;
-  margin: 20px;
   justify-content: space-between;
 }
 
-.reviews::after {
+/* .reviews::after {
   content: "";
   flex: auto;
-}
+} */
 
-div.review {
+.reviews-item {
   background: aliceblue;
   position: relative;
   min-height: 1px;
   padding: 20px;
   margin: auto;
   margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.review-title {
+  font-size: 35px;
 }

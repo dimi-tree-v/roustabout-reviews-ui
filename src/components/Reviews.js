@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { apiRequest } from '../services/userServices';
 
 const Reviews = () => {
-
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -11,20 +11,17 @@ const Reviews = () => {
 
   const fetchItems = async () => {
         const response = await apiRequest('GET', 'http://localhost:8000/api/v1/articles/');
-        console.log(response);
-        const reviews = response.results
-        console.log(reviews);
-        setReviews(reviews);
-        console.log(reviews);
+        setReviews(response.results);
     }
 
   const reviewItems = reviews.map(review =>
-      <div className="review">
-        <a className="review_link">
-          <div className="review_title">
+
+      <div className="reviews-item">
+        <Link to={`/reviews/${review.id}`}>
+          <div className="reviews-item-title">
             {review.title}
           </div>
-          <div className="review_meta">
+          <div className="reviews-item-meta">
             <ul>
               <li>
                 By: {review.author}
@@ -34,7 +31,7 @@ const Reviews = () => {
               </li>
             </ul>
           </div>
-        </a>
+        </Link>
       </div>
       );
 
