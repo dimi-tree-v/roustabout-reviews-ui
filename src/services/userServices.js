@@ -9,21 +9,21 @@ export const userService = {
 function login(username, password) {
     console.log('login service');
     let body = { username, password }
-    apiPost(apiUrls.login, body)
-        .then(tokens => {
-            let { refresh, access } = tokens;
-            let user = { username, access};
-            localStorage.setItem('user', JSON.stringify(user));
-            console.log(user);
-            return user;
-        });
+    return apiPost(apiUrls.login, body)
+            .then(tokens => {
+                let { refresh, access } = tokens;
+                let user = { username, access};
+                localStorage.setItem('user', JSON.stringify(user));
+                console.log(user);
+                return user;
+            });
 }
 
 function logout() {
     localStorage.removeItem('user');
 }
 
-export function apiRequest(method, url, data={}) {
+export function apiRequest(method, url) {
     const requestOptions = {
         method: method,
         headers: authHeader(),
@@ -51,9 +51,8 @@ function handleResponse(response) {
     return response.text().then(text => {
         const data = text && JSON.parse(text);
         if (!response.ok) {
-            if (response.status !== 200) {
-                logout();
-                window.location.reload();
+            if (response.status >= 400) {
+              console.log(data.message, response.status);
             }
             const error = ( data && data.message) || response.statusText;
             return Promise.reject(error);

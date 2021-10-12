@@ -9,21 +9,20 @@ export const userActions = {
 };
 
 function login(username, password) {
-    // dispatch = useDispatch();
     return dispatch => {
         dispatch(request({ username }));
-
         userService.login(username, password)
-            .then(
-                user => {
-                    dispatch(success(user));
-                    history.push('/')
+          .then(user => {
+                  dispatch(success(user));
+                  history.push('/')
+                  window.location.reload(false);
                 },
                 error => {
-                    dispatch(failure(error));
-                    // dispatch(alertActions.error(error));
+                  dispatch(failure(error));
+                  // dispatch(alertActions.error(error));
                 }
-            )
+              )
+
     }
     function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
     function success(user) { return { type: userConstants.LOGIN_SUCCESS, user } }
