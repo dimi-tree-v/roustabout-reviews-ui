@@ -10,7 +10,9 @@ function login(username, password) {
     console.log('login service');
     let body = { username, password }
     apiPost(apiUrls.login, body)
-        .then(user => {
+        .then(tokens => {
+            let { refresh, access } = tokens;
+            let user = { username, access};
             localStorage.setItem('user', JSON.stringify(user));
             console.log(user);
             return user;
