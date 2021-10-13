@@ -21,7 +21,7 @@ const Reviews = () => {
       <div className="reviews-item">
         <Link to={`/reviews/${review.id}`}>
           <div className="reviews-item-image">
-            <Disc/>
+            <Disc size='lg'/>
           </div>
           <div className="reviews-item-title">
             {review.title}

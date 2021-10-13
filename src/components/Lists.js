@@ -1,6 +1,6 @@
 const Lists = () => {
   return (
-    <h2> Lists </h2>
+    <h2 className="page-titles"> Lists </h2>
   )
 }
 

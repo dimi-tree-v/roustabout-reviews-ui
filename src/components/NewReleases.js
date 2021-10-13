@@ -1,6 +1,6 @@
 const NewReleases = () => {
   return (
-    <h2> NewReleases </h2>
+    <h2 className="page-titles"> NewReleases </h2>
   )
 }
 

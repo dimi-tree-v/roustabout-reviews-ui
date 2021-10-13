@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+a:visited {
+ text-decoration: none;
+ color: inherit;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -21,6 +26,14 @@ nav {
 
 a {
   text-decoration: none;
+}
+
+svg {
+  color: black!important;
+}
+
+ul {
+  list-style-type: none;
 }
 
 h1 {
@@ -78,15 +91,16 @@ h1 {
 }
 
 .page-titles {
-  margin-left: 5%;
+  margin-left: 6%;
   margin-top: 2%;
+  font-size: 30px;
 }
 
-.reviews {
+div.reviews {
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  margin: 2% 5% 2% 5%
+  margin: 2% 5% 2% 5%;
 }
 
 /* .reviews::after {
@@ -94,19 +108,23 @@ h1 {
   flex: auto;
 } */
 
+
 .reviews-item {
-  background: aliceblue;
-  position: relative;
-  padding: 20px;
-  width: 20%;
-  margin-bottom: 3%;
-  margin-right: 5%;
-  height: 250px;
+    background: aliceblue;
+    position: relative;
+    padding: 20px;
+    width: 20%;
+    margin: 1%;
+    height: 380px;
+    color: black!important;
 }
 
 .reviews-item-title {
   font-size: 20px;
-  min-height: 50%;
+  min-height: 20%;
+  margin-top: 5%;
+  text-align: center;
+  color: black!important;
 }
 
 .reviews-item-meta {
@@ -114,12 +132,5 @@ h1 {
   text-align: center;
   position: relative;
   top: 20px;
-}
-
-.reviews-item-image {
-  align-items: center;
-}
-
-ul {
-  list-style-type: none;
+  color: black!important;
 }
