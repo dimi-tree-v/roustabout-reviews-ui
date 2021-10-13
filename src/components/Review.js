@@ -12,8 +12,7 @@ const Review = () => {
   const fetchItems = async () => {
     const id = window.location.pathname.split('/').pop();
     const review = await apiRequest('GET', `http://localhost:8000/api/v1/articles/${id}`);
-    console.log(review)
-    setReview(review)
+    setReview(review);
   }
 
   return (

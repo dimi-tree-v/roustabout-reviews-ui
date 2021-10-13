@@ -77,10 +77,16 @@ h1 {
   width: 100%;
 }
 
+.page-titles {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
 .reviews {
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
+  margin: 2% 5% 2% 5%
 }
 
 /* .reviews::after {
@@ -91,16 +97,29 @@ h1 {
 .reviews-item {
   background: aliceblue;
   position: relative;
-  min-height: 1px;
   padding: 20px;
-  margin: auto;
-  margin-top: 10px;
+  width: 20%;
+  margin-bottom: 3%;
+  margin-right: 5%;
+  height: 250px;
+}
+
+.reviews-item-title {
+  font-size: 20px;
+  min-height: 50%;
+}
+
+.reviews-item-meta {
+  font-style: italic;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+
+.reviews-item-image {
+  align-items: center;
 }
 
 ul {
   list-style-type: none;
-}
-
-.review-title {
-  font-size: 35px;
 }

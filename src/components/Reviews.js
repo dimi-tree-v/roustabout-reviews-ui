@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Disc } from 'react-bootstrap-icons';
+import { IconLink, TextLink } from './Button';
 import { apiRequest } from '../services/userServices';
 
 const Reviews = () => {
@@ -18,6 +20,9 @@ const Reviews = () => {
 
       <div className="reviews-item">
         <Link to={`/reviews/${review.id}`}>
+          <div className="reviews-item-image">
+            <Disc/>
+          </div>
           <div className="reviews-item-title">
             {review.title}
           </div>
@@ -37,7 +42,7 @@ const Reviews = () => {
 
   return (
     <div>
-      <h2> Reviews </h2>
+      <h2 className="page-titles"> Reviews </h2>
       <div className="reviews">
         {reviewItems}
       </div>
