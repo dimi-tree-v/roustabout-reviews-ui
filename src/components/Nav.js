@@ -4,11 +4,16 @@ import { IconLink, TextLink } from './Button';
 
 
 const Nav = ({ title }) => {
+  var user = window.localStorage.user;
+
   return (
     <nav>
       <div className="nav-row-1">
-        <h1 className="title-header"><TextLink text={title} path='/' /></h1>
-        <IconLink icon={<Person/>} path='/login'/>
+        <h1 className="title-header">
+          <TextLink text={title} path='/' />
+        </h1>
+        <IconLink icon={ <Person/> } path={ user ? '/user/{id}': '/login' } label="this"/>
+
       </div>
       <div className="nav-row-2">
         <TextLink text="Reviews" path="/reviews" />

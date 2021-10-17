@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Disc } from 'react-bootstrap-icons';
 import { apiRequest } from '../services/userServices';
 
 
@@ -21,12 +22,13 @@ const Review = () => {
 
   return (
     <div className="review">
-        <div className="review-title">
-          {review.title}
+        <div className="review-release">
+          <div> <Disc size='xs'/> </div>
+          <div> {release.artists} </div>
+          <div> {release.title} </div>
         </div>
         <div className="review-title">
-          Artist: {}
-          { release.type.toLowerCase() }
+          {review.title}
         </div>
         <div className="review-meta">
           <ul>

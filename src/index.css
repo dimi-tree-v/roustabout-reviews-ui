@@ -21,7 +21,7 @@ nav {
   overflow: auto;
   min-height: 4%;
   border: 1px solid grey;
-  padding: 1%;
+  padding: .5%;
 }
 
 a {
@@ -119,6 +119,15 @@ div.reviews {
     color: black!important;
 }
 
+.reviews-item-release {
+  font-size: 20px;
+  min-height: 20%;
+  margin-top: 5%;
+  text-align: center;
+  color: black!important;
+  flex: wrap;
+}
+
 .reviews-item-title {
   font-size: 20px;
   min-height: 20%;
@@ -133,4 +142,23 @@ div.reviews {
   position: relative;
   top: 20px;
   color: black!important;
+}
+
+.review {
+  padding: 0 10% 0% 10%;
+}
+
+.review-release {
+  margin-bottom: 3%;
+  margin-top: 1%;
+}
+
+.review-release div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  padding: 10px;
+  max-width: 30%;
+  margin: auto;
 }
