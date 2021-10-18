@@ -6,6 +6,7 @@ import Reviews from './components/Reviews';
 import Review from './components/Review';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoginPage from './components/Login';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/reviews/:id" component={Review} />
           <Route path="/login" component={LoginPage} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
