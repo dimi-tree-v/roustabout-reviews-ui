@@ -23,9 +23,9 @@ const Review = () => {
   return (
     <div className="review">
         <div className="review-release">
-          <div> <Disc size='xs'/> </div>
-          <div> {release.artists} </div>
-          <div> {release.title} </div>
+          <div className="review-release-album-art"> <Disc size='xs'/> </div>
+          <div className="review-release-album-artists"> {release.artists} </div>
+          <div className="review-release-album-title"> {release.title} </div>
         </div>
         <div className="review-title">
           {review.title}
@@ -37,6 +37,9 @@ const Review = () => {
             </li>
             <li>
               Rating: {review.rating}
+            </li>
+            <li>
+              {release.genre}
             </li>
           </ul>
           <div className='review-body'> {review.body} </div>
