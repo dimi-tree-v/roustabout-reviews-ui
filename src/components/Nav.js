@@ -12,20 +12,21 @@ const Nav = ({ title }) => {
         <h1 className="title-header">
           <TextLink text={title} path='/' />
         </h1>
-        <IconLink icon={ <Person/> } path={ user ? '/user/{id}': '/login' } label="this"/>
-
-      </div>
-      <div className="nav-row-2">
-        <TextLink text="Reviews" path="/reviews" />
-        <TextLink text="New Releases" path="/new-releases"/>
-        <TextLink text="Lists" path="/lists"/>
+        <div className="nav-items">
+          <TextLink text="Reviews" path="/reviews" />
+          <TextLink text="New Releases" path="/new-releases"/>
+          <TextLink text="Lists" path="/lists"/>
+          <div className="account-icon">
+            <IconLink icon={ <Person/> } path={ user ? '/user/{id}': '/login' } label="this"/>
+          </div>
+        </div>
       </div>
     </nav>
   )
 }
 
 Nav.defaultProps = {
-  title: "Roustabout Reviews",
+  title: "Яr",
 }
 
 Nav.propTypes = {
