@@ -2,18 +2,29 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Disc } from 'react-bootstrap-icons';
 import { IconLink, TextLink } from './Button';
+import Loading from './Loading'
 import { apiRequest } from '../services/userServices';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true)
     fetchItems();
+    setIsLoading(false)
   },[]);
 
   const fetchItems = async () => {
+        console.log(isLoading);
         const response = await apiRequest('GET', 'http://localhost:8000/api/v1/articles/');
-        setReviews(response.results);
+        if (response.results) {
+          setReviews(response.results);
+          setIsLoading(false);
+          console.log(isLoading);
+        } else {
+          console.log("No results");
+        }
     }
 
   const reviewItems = reviews.map(review =>
@@ -44,7 +55,7 @@ const Reviews = () => {
     <div>
       <h2 className="page-titles"> Reviews </h2>
       <div className="reviews">
-        {reviewItems}
+        { (isLoading) ? <Loading/>: reviewitems }
       </div>
     </div>
   )
