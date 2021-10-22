@@ -123,7 +123,7 @@ h1 {
 div.reviews {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 2% 5% 2% 5%;
   min-height: 21rem;
 }
@@ -131,9 +131,8 @@ div.reviews {
 .reviews-item {
   position: relative;
   padding: 20px;
-  width: 20%;
-  margin: 1%;
-  height: 380px;
+  width: 15%;
+  margin: 0% 1% 4% 0%;;
   transition-duration: 0.1s;
 }
 
@@ -228,17 +227,18 @@ div.reviews {
 div.new-releases {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
-  margin: 2% 5% 2% 5%;
+  margin: 2% 5% 5% 5%;
   min-height: 21rem;
+  justify-content: space-around;
+  align-items: center;
+
 }
 
 .releases-item {
   position: relative;
   padding: 20px;
   width: 20%;
-  margin: 1%;
-  height: 380px;
+  margin: 0% 1% 4% 0%;
   transition-duration: 0.1s;
 }
 
@@ -319,6 +319,6 @@ div.new-releases {
   background-color: #D3D3D3;
   font-size: 13px;
   text-align: right;
-
+  margin-top: 5%;
 
 }
