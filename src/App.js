@@ -2,7 +2,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import Lists from './components/Lists';
 import NewReleases from './components/NewReleases';
-import NewRelease from './components/NewRelease';
+import Release from './components/Release';
 import Reviews from './components/Reviews';
 import Review from './components/Review';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/lists" component={Lists} />
           <Route exact path="/new-releases" component={NewReleases} />
-          <Route path="/new-releases/:id" component={NewRelease} />
+          <Route path="/releases/:id" component={Release} />
           <Route exact path="/reviews" component={Reviews} />
           <Route path="/reviews/:id" component={Review} />
           <Route path="/login" component={LoginPage} />

@@ -28,7 +28,7 @@ const NewReleases = () => {
     const releaseItems = releases.map(release =>
 
         <div className="releases-item">
-          <Link to={`/new-releases/${release.id}`}>
+          <Link to={`/releases/${release.id}`}>
             <div className="releases-item-image">
               <Disc size='lg'/>
             </div>
@@ -54,7 +54,7 @@ const NewReleases = () => {
 
   return (
     <div>
-      <h2 className="page-titles"> NewReleases </h2>
+      <h2 className="page-titles"> New Releases </h2>
       <div className="new-releases">
         { (isLoading) ? <Loading/>: releaseItems }
       </div>
