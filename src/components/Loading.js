@@ -1,8 +1,10 @@
 import { Spinner } from 'reactstrap';
 
 const Loading = () => {
-  return(
-    <Spinner style={{ width: '3rem', height: '3rem' }} type="grow" />
+  return (
+    <div className="loading-body">
+      <Spinner type="grow"  color="danger"/>
+    </div>
   )
 };
 

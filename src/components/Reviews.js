@@ -10,7 +10,6 @@ const Reviews = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true)
     fetchItems();
     setIsLoading(false)
   },[]);
@@ -55,7 +54,7 @@ const Reviews = () => {
     <div>
       <h2 className="page-titles"> Reviews </h2>
       <div className="reviews">
-        { (isLoading) ? <Loading/>: reviewitems }
+      { (isLoading) ? <Loading/>: reviewItems }
       </div>
     </div>
   )

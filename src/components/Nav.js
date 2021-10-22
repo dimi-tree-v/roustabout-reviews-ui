@@ -23,7 +23,7 @@ const Nav = ({ title }) => {
       </div>
     </nav>
   )
-}
+};
 
 Nav.defaultProps = {
   title: "Яr",
@@ -33,4 +33,4 @@ Nav.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default Nav
+export default Nav;
