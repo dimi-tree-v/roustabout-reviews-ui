@@ -308,6 +308,13 @@ div.new-releases {
   background-color: #D3D3D3;
 }
 
+.release-article-reviews-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .loading-body {
   margin: auto;
   display: flex;
