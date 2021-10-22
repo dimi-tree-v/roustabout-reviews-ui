@@ -128,12 +128,6 @@ div.reviews {
   min-height: 21rem;
 }
 
-/* .reviews::after {
-  content: "";
-  flex: auto;
-} */
-
-
 .reviews-item {
   position: relative;
   padding: 20px;
@@ -229,6 +223,42 @@ div.reviews {
 
 .review-body {
   margin-top: 2%;
+}
+
+div.new-releases {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 5% 2% 5%;
+  min-height: 21rem;
+}
+
+.releases-item {
+  position: relative;
+  padding: 20px;
+  width: 20%;
+  margin: 1%;
+  height: 380px;
+  transition-duration: 0.1s;
+}
+
+.releases-item:hover .releases-item-title {
+  color: red;
+  transition-duration: 0.1s;
+}
+
+.releases-item-title {
+  font-size: 20px;
+  min-height: 20%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.releases-item-meta {
+  font-style: italic;
+  text-align: center;
+  position: relative;
+  top: 20px;
 }
 
 .loading-body {

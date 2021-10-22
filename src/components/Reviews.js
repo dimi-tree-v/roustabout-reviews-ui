@@ -11,16 +11,14 @@ const Reviews = () => {
 
   useEffect(() => {
     fetchItems();
-    setIsLoading(false)
+    setIsLoading(false);
   },[]);
 
   const fetchItems = async () => {
-        console.log(isLoading);
         const response = await apiRequest('GET', 'http://localhost:8000/api/v1/articles/');
         if (response.results) {
           setReviews(response.results);
           setIsLoading(false);
-          console.log(isLoading);
         } else {
           console.log("No results");
         }
