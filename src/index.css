@@ -261,6 +261,53 @@ div.new-releases {
   top: 20px;
 }
 
+
+.release {
+  padding: 0 10% 0% 10%;
+  margin-bottom: 6%;
+  margin-top: 3%;
+  position: relative;
+}
+
+.release-main-info {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.release-main-info ul {
+  padding: 5% 2% 2% 2%;
+  margin-left: 5%;
+
+}
+
+.release-title {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 5%;
+}
+
+.release-artists {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.release-art {
+  padding: 10px;
+  width: 35%;
+}
+
+.release-sub-headers {
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.release-reviews {
+  background-color: #D3D3D3;
+}
+
 .loading-body {
   margin: auto;
   display: flex;

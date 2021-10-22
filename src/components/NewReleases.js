@@ -28,7 +28,7 @@ const NewReleases = () => {
     const releaseItems = releases.map(release =>
 
         <div className="releases-item">
-          <Link to={`/releases/${release.id}`}>
+          <Link to={`/new-releases/${release.id}`}>
             <div className="releases-item-image">
               <Disc size='lg'/>
             </div>
@@ -62,4 +62,4 @@ const NewReleases = () => {
   )
 }
 
-export default NewReleases
+export default NewReleases;

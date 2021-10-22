@@ -2,6 +2,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import Lists from './components/Lists';
 import NewReleases from './components/NewReleases';
+import NewRelease from './components/NewRelease';
 import Reviews from './components/Reviews';
 import Review from './components/Review';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -16,7 +17,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/lists" component={Lists} />
-          <Route path="/new-releases" component={NewReleases} />
+          <Route exact path="/new-releases" component={NewReleases} />
+          <Route path="/new-releases/:id" component={NewRelease} />
           <Route exact path="/reviews" component={Reviews} />
           <Route path="/reviews/:id" component={Review} />
           <Route path="/login" component={LoginPage} />
