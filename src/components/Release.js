@@ -26,10 +26,10 @@ const NewRelease = () => {
   const articleReviewItems = articleReviews.map(review =>
       <div className="release-article-reviews-item">
         <Link to={`/reviews/${review.id}`}>
-          <div className="reviews-item-title">
+          <div className="release-article-reviews-item-title">
             {review.title}
           </div>
-          <div className="reviews-item-meta">
+          <div className="release-article-reviews-item-meta">
             <ul>
               <li>
                 By: {review.author}

@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   color: black;
+  transition-duration: 0.1s;
 }
 
 a:visited {
@@ -132,8 +133,7 @@ div.reviews {
   position: relative;
   padding: 20px;
   width: 15%;
-  margin: 0% 1% 4% 0%;;
-  transition-duration: 0.1s;
+  margin: 0% 1% 4% 0%;
 }
 
 .reviews-item:hover .reviews-item-title {
@@ -301,18 +301,49 @@ div.new-releases {
 
 .release-sub-headers {
   font-weight: 600;
-  font-size: 21px;
+  font-size: 23px;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  border-bottom: 1px solid lightgrey;
 }
 
 .release-reviews {
-  background-color: #D3D3D3;
+  margin: auto;
+}
+
+.articles {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2% 5% 2% 5%;
+  min-height: 21rem;
 }
 
 .release-article-reviews-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  margin: 2%;
+  text-align: center;
+  width: 20%;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  padding: 3%;
+  height: 225px;
+}
+
+.release-article-reviews-item:hover .release-article-reviews-item-title {
+  color: red;
+  transition-duration: 0.1s;
+}
+
+.release-article-reviews-item-title {
+  min-height: 50%;
+  text-align: center;
+
+}
+
+.release-article-reviews-item-meta {
+  font-style: italic;
+  text-align: center;
+  position: relative;
 }
 
 .loading-body {
@@ -327,5 +358,4 @@ div.new-releases {
   font-size: 13px;
   text-align: right;
   margin-top: 5%;
-
 }
