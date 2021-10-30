@@ -5,9 +5,10 @@ import Loading from './Loading';
 import { apiRequest } from '../services/userServices';
 
 
-const NewRelease = () => {
+const Release = () => {
   const [release, setRelease] = useState([]);
   const [articleReviews, setArticleReviews] = useState([]);
+  const [userReviews, setUserReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -19,29 +20,54 @@ const NewRelease = () => {
     const id = window.location.pathname.split('/').pop();
     const release = await apiRequest('GET', `http://localhost:8000/api/v1/releases/${id}`);
     setRelease(release);
-    setArticleReviews(release.articles)
-    console.log(release)
+    setArticleReviews(release.articles);
+    setUserReviews(release.user_reviews);
   };
 
-  const articleReviewItems = articleReviews.map(review =>
+  const articleReviewItems = articleReviews.map(article =>
       <div className="release-article-reviews-item">
-        <Link to={`/reviews/${review.id}`}>
+        <Link to={`/reviews/${article.id}`}>
           <div className="release-article-reviews-item-title">
-            {review.title}
+            {article.title}
           </div>
           <div className="release-article-reviews-item-meta">
             <ul>
               <li>
-                By: {review.author}
+                By: {article.author}
               </li>
               <li>
-                Rating: {review.rating}
+                Rating: {article.rating}
               </li>
             </ul>
           </div>
         </Link>
       </div>
-      );
+    );
+
+    const articleReviewsSection = (
+      <div>
+        <h2 className="release-sub-headers"> Articles </h2>
+        <div className="articles"> {articleReviewItems} </div>
+      </div>
+    );
+
+    const userReviewItems = userReviews.map(review =>
+      <div className="release-user-review-item">
+        <div className="release-user-review-header">
+          <div className="release-user-review-user">{review.author}</div>
+          <div className="release-user-review-rating">{review.rating}</div>
+        </div>
+        <div className="release-user-review-title">{review.title}</div>
+        <div className="release-user-review-body">{review.body}</div>
+      </div>
+    );
+
+    const userReviewsSection = (
+      <div>
+        <h2 className="release-sub-headers"> User Reviews </h2>
+        <div className="release-user-reviews"> {userReviewItems} </div>
+      </div>
+    )
 
   return (
       <div className="release">
@@ -66,20 +92,19 @@ const NewRelease = () => {
           </ul>
         </div>
         <div className="release-reviews">
-          <h2 className="release-sub-headers">Reviews</h2>
-          <div className="articles">
-              {articleReviewItems}
-          </div>
-          <div className="user-reviews">
-            User Reviews
-          </div>
+
+          { (articleReviews.length > 0) ? articleReviewsSection : null }
+          { (userReviews.length > 0) ? userReviewsSection : null }
+
         </div>
         <div className="other-releases">
-          <h2 className="release-sub-headers">Releases by this Artist</h2>
+          <h2 className="release-sub-headers">Other releases by {release.artists}</h2>
+
+
         </div>
       </div>
 
   )
 };
 
-export default NewRelease;
+export default Release;
