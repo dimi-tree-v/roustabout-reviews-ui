@@ -37,7 +37,10 @@ const Reviews = () => {
           <div className="reviews-item-meta">
             <ul>
               <li>
-                By: {review.author}
+                Release: {review.release}
+              </li>
+              <li>
+                Artists: {review.artists}
               </li>
               <li>
                 Rating: {review.rating}
