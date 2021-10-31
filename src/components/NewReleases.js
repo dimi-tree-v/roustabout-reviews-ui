@@ -56,7 +56,7 @@ const NewReleases = () => {
     <div>
       <h2 className="page-titles"> New Releases </h2>
       <div className="new-releases">
-        { (isLoading) ? <Loading/>: releaseItems }
+        { (isLoading) ? <Loading/> : releaseItems }
       </div>
     </div>
   )
