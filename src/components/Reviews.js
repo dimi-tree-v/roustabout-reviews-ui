@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Disc } from 'react-bootstrap-icons';
+import { Disc, StarFill } from 'react-bootstrap-icons';
 import { IconLink, TextLink } from './Button';
 import Loading from './Loading'
 import { apiRequest } from '../services/userServices';
@@ -37,13 +37,13 @@ const Reviews = () => {
           <div className="reviews-item-meta">
             <ul>
               <li>
-                Release: {review.release}
+                {review.release}
               </li>
               <li>
-                Artists: {review.artists}
+                {review.artists}
               </li>
               <li>
-                Rating: {review.rating}
+                {review.rating} <StarFill/>
               </li>
             </ul>
           </div>
