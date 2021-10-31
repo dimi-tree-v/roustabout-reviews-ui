@@ -23,7 +23,7 @@ const NewReleases = () => {
         } else {
           console.log("No results");
         }
-    }
+    };
 
     const releaseItems = releases.map(release =>
 
@@ -60,6 +60,6 @@ const NewReleases = () => {
       </div>
     </div>
   )
-}
+};
 
 export default NewReleases;
