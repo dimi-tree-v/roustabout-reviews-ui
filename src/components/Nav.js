@@ -26,7 +26,7 @@ const Nav = ({ title }) => {
 };
 
 Nav.defaultProps = {
-  title: "Яr",
+  title: "ЯR RoustaboutReviews",
 }
 
 Nav.propTypes = {

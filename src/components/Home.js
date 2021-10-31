@@ -1,6 +1,11 @@
 const Home = () => {
   return (
-    <h2 className="page-titles"> Home </h2>
+    <div>
+      <h2 className="page-titles"> Home </h2>
+      <div className="homepage-items">
+      
+      </div>
+    </div>
   )
 }
 
