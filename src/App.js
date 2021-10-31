@@ -18,7 +18,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/lists" component={Lists} />
           <Route exact path="/new-releases" component={NewReleases} />
-          <Route path="/releases/:id" component={Release} />
+          <Route path="/releases/:title" component={Release} />
           <Route exact path="/reviews" component={Reviews} />
           <Route path="/reviews/:id" component={Review} />
           <Route path="/login" component={LoginPage} />
