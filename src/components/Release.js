@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Disc } from 'react-bootstrap-icons';
+import { Disc, StarFill } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import { apiRequest } from '../services/userServices';
@@ -17,8 +17,9 @@ const Release = () => {
   }, []);
 
   const fetchItems = async () => {
-    const id = window.location.pathname.split('/').pop();
-    const release = await apiRequest('GET', `http://localhost:8000/api/v1/releases/${id}`);
+    const name = window.location.pathname.split('/').pop();
+    const response = await apiRequest('GET', `http://localhost:8000/api/v1/releases/?title=${name}`);
+    const release = response.results[0];
     setRelease(release);
     setArticleReviews(release.articles);
     setUserReviews(release.user_reviews);
@@ -33,10 +34,10 @@ const Release = () => {
           <div className="release-article-reviews-item-meta">
             <ul>
               <li>
-                By: {article.author}
+                {article.author}
               </li>
               <li>
-                Rating: {article.rating}
+                {article.rating} <StarFill/>
               </li>
             </ul>
           </div>
@@ -54,11 +55,13 @@ const Release = () => {
     const userReviewItems = userReviews.map(review =>
       <div className="release-user-review-item">
         <div className="release-user-review-header">
-          <div className="release-user-review-user">{review.author}</div>
-          <div className="release-user-review-rating">{review.rating}</div>
+          <div className="release-user-review-user"> {review.author} </div>
+          <div className="release-user-review-rating">
+           {review.rating} <StarFill/>
+           </div>
         </div>
-        <div className="release-user-review-title">{review.title}</div>
-        <div className="release-user-review-body">{review.body}</div>
+        <div className="release-user-review-title"> {review.title} </div>
+        <div className="release-user-review-body"> {review.body} </div>
       </div>
     );
 
@@ -89,6 +92,18 @@ const Release = () => {
             <li>
               <div className="release-date"> {release.date_released} </div>
             </li>
+            <li>
+              <div className="release-avg-critic-rating">
+               {release.average_critic_rating} <StarFill/> from {articleReviews.length}
+               { articleReviews.length > 1 ? " articles" : " article"}
+               </div>
+            </li>
+            <li>
+              <div className="release-avg-user-rating">
+               {release.average_user_rating} <StarFill/> from {userReviews.length} user
+               { userReviews.length > 1 ? " reviews" : " review"}
+              </div>
+            </li>
           </ul>
         </div>
         <div className="release-reviews">
@@ -98,7 +113,7 @@ const Release = () => {
 
         </div>
         <div className="other-releases">
-          <h2 className="release-sub-headers">Other releases by {release.artists}</h2>
+          <h2 className="release-sub-headers">Other releases by {release.artists} </h2>
 
 
         </div>
